@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>App Compre Junto</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900|Source+Sans+Pro:600,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="../public/css/bootstrap/bootstrap-min.css">
-    
-    <link rel="stylesheet" href="../public/css/styleCompreJunto.css">
-
-</head>
-<body id="body_app">
-
-        <button id="triggerModal" type="button" class="btn btn-primary hidden" data-toggle="modal" data-target="#exampleModal"> </button>
+    <button id="triggerModal" type="button" class="btn btn-primary hidden" data-toggle="modal" data-target="#exampleModal"> </button>
       
       <div class="modal fade modal_products" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -44,7 +28,8 @@
 
             <div class="box_content_app_compre_junto">
                 <div class="wrap_content">
-                    <form id="form_create_date" method="POST">
+                    <form id="form_create_date" method="POST" action="./comprejunto/object">
+                        <input type="hidden" id="allProds" name="allProds">
                         <div id="data_parent_primary">
                             <div class="box_primary">
                                     <div class="wrap_dataset">
@@ -66,7 +51,7 @@
                               <div class="box_thumbnails">
                                   <div class="wrap_dataset">
                                       <div class="wrap_date hidden">
-                                          <div class="i-date hidden"><input class="hidden" type="text" id="data_set"></div>
+                                          <div class="i-date hidden"><input name="thumbMini" class="hidden" type="text" id="data_set"></div>
                                       </div>
                                   </div>
                                   <div id="getProductHTML"></div>
@@ -88,13 +73,3 @@
         </div>
     </div>
 
-
- 
-<script src="../public/js/jquery/jquery-min.js"></script>
-<script src="../public/js/bootstrap/popper-min.js"></script>
-<script src="../public/js/bootstrap/bootstrap-min.js"></script>
-
-<!--<script src="../../controllers/ResquestController/RequestController.js"></script>-->
-<script src="../public/js/indexCompreJunto.js"></script>
-</body>
-</html>

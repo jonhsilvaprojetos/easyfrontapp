@@ -113,7 +113,7 @@ class ProductsObject{
                         <div class="box_thumbnails">
                             <div class="wrap_dataset">
                                 <div class="wrap_date hidden">
-                                    <div class="i-date hidden"><input class="hidden" type="text" id="data_set" data-select='${sttr}'></div>
+                                    <div class="i-date hidden"><input name="thumbMini" class="hidden" type="text" id="data_set" data-select='${sttr}'></div>
                                 </div>
                             </div>
                         <div id="getProductHTML">
@@ -169,29 +169,31 @@ class ProductsObject{
 
     onSubmitForm(){
         let objForm = {
-                dataProd: {
-                    configList:{},
-                    principal:{},
-                    recebe:[]
-                }
+            dataProd: {
+                configList:{},
+                principal:{},
+                recebe:[]
             }
+        }
         $('form#form_create_date').on('submit',function(event){
             //event.preventDefault();
             console.log('submitou');
             [...$(this)[0].elements].forEach(function(item, index){
 
                 if(item.type !== 'submit'){
-                    if(item.name == 'data_primary'){
-                        objForm.dataProd.principal = JSON.parse(item.dataset.select)
-                        console.dir(item);
-                    }else {
-                        objForm.dataProd.recebe.push(JSON.parse(item.dataset.select))
-                        console.dir(item);
+                    if(item.name !== 'allProds'){
+                        if(item.name == 'data_primary'){
+                            objForm.dataProd.principal = JSON.parse(item.dataset.select)
+                            console.dir(item);
+                        }else {
+                            objForm.dataProd.recebe.push(JSON.parse(item.dataset.select))
+                            console.dir(item);
+                        }
                     }
                 }
                 
             });
-            console.log(objForm);
+            $('#allProds').val(JSON.stringify(objForm));
         });
 
     }
