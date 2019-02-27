@@ -10,4 +10,9 @@ router.get('/apps', (req, res) => {
     res.send('Lista os apps')
 })
 
+router.get('/apps/comprejunto', (req, res)=>{
+    res.render('compre_junto');
+});
+
+
 module.exports = router

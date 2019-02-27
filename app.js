@@ -8,7 +8,11 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const admin = require('./routes/adm');
 const initial = require('./routes/initial'); 
+
+
+
 const AJX = require('./models/Requisicao');
+
 
 
 const FilterParams = require('./public/js/indexApp');
@@ -57,6 +61,9 @@ const FilterParams = require('./public/js/indexApp');
             res.send(error);
         });
     });
+
+    // Rota app Teste
+    //compre junto
 
     // Rota default
     app.use('/', initial)
