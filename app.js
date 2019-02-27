@@ -39,7 +39,7 @@ const flash = require('connect-flash');
     })
 
     // Rota admin
-    
+
     // Iniciando servidor
     const PORT = 3000;
     app.listen(PORT, () => {
