@@ -36,7 +36,18 @@ const flash = require('connect-flash');
     // Rota default
     app.get('/', (req, res) => {
         res.render('home');
-    })
+    });
+
+    app.post('/user', (req, res)=>{
+
+            res.render('user', {email: req.body.email, senha: req.body.senha, created_time: new Date().toLocaleDateString('pt-BR'), classBody: 'pagina-usuario'});
+           
+
+    });
+
+    app.get('/login', (req, res)=>{
+        res.render('formulario');
+    });
 
     // Rota admin
 
