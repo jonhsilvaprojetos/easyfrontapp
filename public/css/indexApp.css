@@ -82,8 +82,10 @@ ul {
     position:relative;
 }
 #section_full .bg_full img {
-    background: #f9fcff;
     max-width: 100%;
+}
+#section_full .bg_full {
+    background: #f9fcff;
     text-align: center;
 }
 #section_full .center_text_full {
