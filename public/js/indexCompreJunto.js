@@ -94,7 +94,7 @@ class ProductsObject{
         obj.splice(inicio,fim).forEach(element=>{
             let e = element.info_item
             $('#products-modal .row.wrap-prds').append($class.htmlProductLoad(e));
-        });
+    });
 
                                     
         $('div#btn-select-product').unbind().click(function(e){
