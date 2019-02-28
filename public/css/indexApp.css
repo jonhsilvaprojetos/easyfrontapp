@@ -45,11 +45,23 @@ ul {
     color: #84919c;
     text-decoration: none;
     font-size: 1.1vw;
+    transition:all 0.3s ease-out;
+}
+#box_header ul.box_listagem li a:hover {
+    color: #2c3e50;
 }
 #box_header ul.box_listagem_account li a{
     color: #84919c;
     text-decoration: none;
     font-size: 1.1vw;
+    transition:all 0.3s ease-out;
+}
+#box_header li.account_signup a:hover {
+    background: #82cd32;
+    color: #fff;
+}
+#box_header li.account_login a:hover {
+    color: #82cd32;
 }
 #box_header .row {
     justify-content: space-between;
@@ -64,6 +76,7 @@ ul {
     display: inline-block;
     padding: 0 1vw;
 }
+
 /*/ section /*/
 #section_full{
     position:relative;
@@ -79,6 +92,7 @@ ul {
 }
 #section_full span.text_btn {
     font-size: 1.1vw;
+    padding-left: 1.8vw;
 }
 #section_full .title_full.text-center span {
     font-size: 2.7vw;
@@ -99,7 +113,7 @@ ul {
 }
 #section_full  span.btn_full a {
     color: #fff;
-    padding: 1vw 1.5vw 1vw 1.5vw;
+    padding: 1vw 2.5vw 1vw 2.5vw;
     background: #83cd32;
     font-size: 1.1vw;
     font-weight: 600;
@@ -217,7 +231,7 @@ ul {
     color: #1dabf2;
     font-size: 1.3vw;
     font-weight: 700;
-    padding-top: 4vw;
+    margin-top: 4vw;
     display:table;
 }
 
@@ -263,10 +277,10 @@ ul {
     font-weight: 600;
 }
 #corpo .info .box_statics a.link_static {
-    color: #1dabf2;
+    color: #f3b109;
     font-size: 1.3vw;
     font-weight: 700;
-    padding-top: 4vw;
+    margin-top: 4vw;
     display:table;
 }
 
@@ -298,10 +312,10 @@ ul {
     font-weight: 600;
 }
 #corpo .exception_container .box_inpt a.link_inpt {
-    color: #f3b109;
+    color: #45d68b;
     font-size: 1.3vw;
     font-weight: 700;
-    padding-top: 4vw;
+    margin-top: 4vw;
     display:table;
 }
 #corpo .exception_container {
@@ -368,6 +382,7 @@ ul {
 #footer_primary ul.wrap_brand li img {
     height: 4vh;
     display: table;
+    filter: invert(50%);
 }
 
 /*/ news_letter /*/
@@ -489,7 +504,7 @@ span.link_news_letter a {
     margin-bottom: 1.6vw;
 }
 #footer_end ul.box_footer li a {
-    margin: 0.8vw 0;
+    margin: 1vw 0;
     color: #808b96;
     text-decoration: none;
     display: table;
@@ -532,6 +547,54 @@ span.link_news_letter a {
 }
 #footer_end ul.box_footer_contact li a {
     display: table;
+}
+
+
+/*//////       incons parcial !   before and after /////*/
+
+.box_inst strong.strong_icon:before {
+    padding-right: 1.9vw;
+    vertical-align: middle;
+    content: "";
+    background: url("../../imgAPP/iconblue1.png") center left no-repeat;
+    background-size: 1.2vw;
+}
+#corpo .info .box_info a.link_info:after {
+    content: "";
+    background:url("../../imgAPP/iconblue4.png") center right no-repeat;;
+    padding-left: 2vw;
+    background-size: 1.2vw;
+    vertical-align: middle;
+}
+
+
+.box_static strong.strong_icon:before{
+    padding-right: 1.9vw;
+    background:url("../../imgAPP/iconyellow1.png") center left no-repeat;
+    content:"";
+    background-size: 1.2vw;
+}
+.box_static a.link_static:after {
+    content: "";
+    background:url("../../imgAPP/iconyellow3.png") center right no-repeat;;
+    padding-left: 2vw;
+    background-size: 1.2vw;
+    vertical-align: middle;
+}
+
+
+.box_inpt strong.strong_icon:before{
+    content:"";
+    padding-right: 1.9vw;
+    background: url("../../imgAPP/icongreen2.png") center left no-repeat;
+    background-size: 1.2vw;
+}
+.box_inpt a.link_inpt:after {
+    content: "";
+    background:url("../../imgAPP/icongreen1.png") center right no-repeat;;
+    padding-left: 2vw;
+    background-size: 1.2vw;
+    vertical-align: middle;
 }
 
 
