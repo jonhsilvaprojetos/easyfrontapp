@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 <link rel="stylesheet" href="../public/css/indexApp.css">
+
 <title>App</title>
 </head>
 
@@ -27,8 +28,8 @@
                 </div>
                 <div class="box_account">
                     <ul class="box_listagem_account">
-                        <li><a href="">Log in</a></li>
-                        <li><a href="">Sign out</a></li>
+                        <li class="account_login"><a href="">Log in</a></li>
+                        <li class="account_signup"><a href="">Sign up</a></li>
                     </ul>
                 </div>
             </div>
@@ -193,7 +194,15 @@
                     </div>
                     <div class="new_letter_footer">
                         <div class="wrap_news">
-                            
+                            <div class="wrap_content_news">
+                                <h1 class="title_news_letter">Get a free Beambox now</h1>
+                                <small>No contact, no set-up costs, just awesome wall-to-wall WiFi</small>
+                                <div class="form-group">
+                                    <input type="text" name="email" placeholder="Digite seu email" id="input_news_letter">
+                                    <button class="btn_news_letter">Cadastrar</button>      
+                                </div>
+                                <span class="link_news_letter"><a href="#">Vier our pricing</a></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -201,7 +210,57 @@
         </div>
     </div>
     <div id="footer_end">
-        
+        <div class="container">
+            <div class="row">
+                <div class="box_footer_end">
+                    <div class="col-md-4 col-sm-4 col-xs-12 wrap_footer">
+                        <div class="box_footer_about">
+                            <div class="logo_footer"><img src="../imgAPP/logoteste.png" alt=""></div>
+                            <p class="txt_about">We’re a small and elite technology consulting company working with some of the best companies to help with their information technology needs.
+                            </p>
+                            <span class="copy_footer">Copyright © Agência Samá LLC</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12 wrap_footer">
+                        <div class="box_footer_read">           
+                            <ul class="box_footer">
+                                <h1 class="title_footer">Learn More</h1>
+                                <li><a href="#">How it's work?</a></li>
+                                <li><a href="#">How ?</a></li>
+                                <li><a href="#">work?</a></li>
+                                <li><a href="#">How it</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12 wrap_footer">
+                        <div class="box_footer_company">      
+                            <ul class="box_footer">
+                                <h1 class="title_footer">Company</h1>
+                                <li><a href="#">How it's work?</a></li>
+                                <li><a href="#">How ?</a></li>
+                                <li><a href="#">work?</a></li>
+                                <li><a href="#">How it</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 wrap_footer">
+                        <div class="box_footer_contact">
+                            <ul class="box_footer_contact">
+                                <h1 class="title_footer">Contact us</h1>
+                                <li class="calback_footer">Call or e-mail us, we're always happy to help.</li>
+                                <li class="number_footer"><a href="#">+22 2333-4444</a></li>
+                                <li class="mail_footer"><a href="#">suport@gmail.com</a></li>
+                            </ul>
+                            <ul class="box_socials_footer">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 <script src="../public/js/jquery/jquery-min.js"></script>
