@@ -15,7 +15,7 @@ const Usuario = new Schema({
         type: String,
         required: true
     },
-    password: {
+    senha: {
         type: String,
         required: true
     },
@@ -23,11 +23,17 @@ const Usuario = new Schema({
         type: String
     },
     token: {
-        type: String
+        type: String,
+        required: true,
+        default: "EFA" + Date.now()
     },
     periodo: {
         type: Date,
         default: daysToTest
+    },
+    eAdmin: {
+        type:Number,
+        default: 0
     },
     status: {
         type: Number,
@@ -36,4 +42,3 @@ const Usuario = new Schema({
 })
 
 mongoose.model("usuarios", Usuario);
-module.exports = daysToTest;
