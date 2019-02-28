@@ -8,16 +8,26 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const admin = require('./routes/adm');
 const initial = require('./routes/initial'); 
+const AJX = require('./models/Requisicao');
+const FilterParams = require('./public/js/indexApp');
+
 
 // Configurações
 
-    // Sessão
+    // Criando Session
     app.use(session({
-        secret: "easyfrontapp",
+        secret: "cursodenode",
         resave: true,
         saveUninitialized: true
     }))
     app.use(flash())
+
+    // Middleware (Criando variaveis globais momentaneas)
+    app.use((req, res, next) => {
+        res.locals.success_msg = req.flash("success_msg")
+        res.locals.error_msg = req.flash("error_msg")
+        next()
+    })
 
     // Bodyparse
     app.use(bodyParser.urlencoded({extended: true}))
@@ -28,11 +38,34 @@ const initial = require('./routes/initial');
         app.engine('handlebars', handlebars({defaultLayout: 'main'}))
         app.set('view engine', 'handlebars')
 
+    // Mongoose
+        mongoose.connect("mongodb://localhost/easyfrontapp", {
+                useNewUrlParser: true
+        }).then(() => console.log("Conectado ao Mongo"))
+          .catch((error) => console.log("Erro ao conectar ao mongo: "+error))
+
 
     // Configurando diretorio estático
     app.use(express.static(path.join(__dirname,"public")))
 
     // Rotas
+    // rota teste
+    app.get('/nomes/idade=:idade/limite=:limite', (req, res)=>{
+        var obj = FilterParams(req.params.idade,req.params.limite);
+        res.json(obj);
+    });
+
+    //rotas Requi
+   app.get('/form', (req, res)=>{
+        res.render('form');
+    });
+    app.post('/prods', (req, res)=>{
+        AJX(`https://api.awsli.com.br/v1/produto?format=json&chave_api=${req.body.api}&chave_aplicacao=${req.body.aplication}`).then((object)=>{
+            res.json(object);
+        },(error)=>{
+            res.send(error);
+        });
+    });
 
     // Rota default
     app.use('/', initial)
