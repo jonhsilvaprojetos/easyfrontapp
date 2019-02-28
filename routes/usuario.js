@@ -10,7 +10,6 @@ router.get("/register", (req, res) => {
 })
 
 router.post("/register", (req, res) => {
-
     // verifica se já existe um e-mail cadastrado
     Usuario.findOne({email: req.body.email})
            .then((usuario) => {
@@ -28,8 +27,6 @@ router.post("/register", (req, res) => {
                     bcrypt.genSalt(10, (erro, salt) => {
                         bcrypt.hash(novoUsuario.senha, salt, (erro, hash) => {
                             if(erro){
-                                console.log(erro)
-                                console.log(hash)
                                 req.flash("error_msg", "Houve um erro ao cadastrar")
                                 res.redirect("/")
                             }else{
