@@ -13,11 +13,11 @@ router.get("/list-users/id=:id", (req, res) => {
     if(req.params.id == 'all'){
         Usuario.find().then((usuarios) => {
             res.json(usuarios)
-        }).catch((error) => res.json({error: "Nenhum usuario encontrado"}))
+        }).catch((error) => console.log(error))
     }else{ 
         Usuario.findOne({_id: req.params.id}).then((usuario) => {
             res.json(usuario)
-        }).catch((error) => res.json({error: "Nenhum usuario encontrado"}))
+        }).catch((error) => console.log(error))
     }
 })
 
@@ -48,6 +48,7 @@ router.post("/register", (req, res) => {
                                             req.flash("success_msg", "Usuario cadastrado com sucesso!")
                                             res.redirect("/")
                                         }).catch((error) => {
+                                            console.log(error)
                                             req.flash("error_msg", "Houve um erro interno ao cadastrar")
                                             res.redirect("/")
                                         })
