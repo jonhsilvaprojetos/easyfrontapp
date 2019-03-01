@@ -78,7 +78,7 @@ const FilterParams = require('./public/js/indexApp');
     app.use('/user', user);
 
     // Iniciando servidor
-    const PORT = 3000;
+    var port = process.env.PORT || 3000;
     app.listen(PORT, () => {
         console.log('Servidor Rodando!')
     })
