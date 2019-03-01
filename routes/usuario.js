@@ -13,11 +13,11 @@ router.get("/list-users/id=:id", (req, res) => {
     if(req.params.id == 'all'){
         Usuario.find().then((usuarios) => {
             res.json(usuarios)
-        }).catch((error) => console.log(error))
+        }).catch((error) => res.json({error: "Nenhum usuario encontrado"}))
     }else{ 
         Usuario.findOne({_id: req.params.id}).then((usuario) => {
             res.json(usuario)
-        }).catch((error) => console.log(error))
+        }).catch((error) => res.json({error: "Nenhum usuario encontrado"}))
     }
 })
 
