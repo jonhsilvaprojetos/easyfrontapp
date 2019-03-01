@@ -39,8 +39,11 @@ const FilterParams = require('./public/js/indexApp');
         app.engine('handlebars', handlebars({defaultLayout: 'main'}))
         app.set('view engine', 'handlebars')
 
+    // Variavel banco mongo
+    var dbmongo = process.env.mongo_db || "mongodb://localhost/easyfrontapp"
+
     // Mongoose
-        mongoose.connect("mongodb://localhost/easyfrontapp", {
+        mongoose.connect(dbmongo, {
                 useNewUrlParser: true
         }).then(() => console.log("Conectado ao Mongo"))
           .catch((error) => console.log("Erro ao conectar ao mongo: "+error))
