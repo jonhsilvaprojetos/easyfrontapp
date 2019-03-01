@@ -14,7 +14,7 @@ router.get('/apps/comprejunto', (req, res)=>{
     res.render('comprejunto', {cssCompreJunto: 'styleCompreJunto.css', jsCompreJunto: 'indexCompreJunto.js', classBody: 'app-compre-junto'});
 });
 
-router.post('/apps/comprejunto/object', (req, res) => {
+router.post('/apps/comprejunto', (req, res) => {
     res.json(JSON.parse(req.body.allProds));
 })
 
