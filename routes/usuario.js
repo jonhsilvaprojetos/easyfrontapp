@@ -9,6 +9,18 @@ router.get("/register", (req, res) => {
     res.render("user/register", {title: 'Cadastro', classBody: 'pagina-register'})
 })
 
+router.get("/list-users/id=:id", (req, res) => {
+    if(req.params.id == 'all'){
+        Usuario.find().then((usuarios) => {
+            res.json(usuarios)
+        }).catch((error) => res.json({error: "Nenhum usuario encontrado"}))
+    }else{ 
+        Usuario.findOne({_id: req.params.id}).then((usuario) => {
+            res.json(usuario)
+        })
+    }
+})
+
 router.post("/register", (req, res) => {
     // verifica se já existe um e-mail cadastrado
     Usuario.findOne({email: req.body.email})
