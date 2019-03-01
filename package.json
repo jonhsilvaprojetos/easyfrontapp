@@ -16,7 +16,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "teste"
+    "teste": "teste"
   },
   "repository": {
     "type": "git",
