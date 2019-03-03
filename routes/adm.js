@@ -1,16 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const { eAdmin } = require("../helpers/eAdmin");
 
-router.get('/', (req, res) => {
+router.get('/', eAdmin, (req, res) => {
     res.send('Pagina administracao')
 })
 
-router.get('/apps', (req, res) => {
+router.get('/apps', eAdmin, (req, res) => {
     res.send('Lista os apps')
 })
 
-router.get('/apps/comprejunto', (req, res)=>{
+router.get('/apps/comprejunto', eAdmin, (req, res)=>{
     res.render('comprejunto', {cssCompreJunto: 'styleCompreJunto.css', jsCompreJunto: 'indexCompreJunto.js', classBody: 'app-compre-junto'});
 });
 
