@@ -1,3 +1,4 @@
+// Carregando modulos
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -11,6 +12,8 @@ const initial = require('./routes/initial');
 const user = require('./routes/usuario');
 const AJX = require('./models/Requisicao');
 const FilterParams = require('./public/js/indexApp');
+const passport = require("passport");
+require("./config/auth")(passport);
 
 
 // Configurações
@@ -21,12 +24,17 @@ const FilterParams = require('./public/js/indexApp');
         resave: true,
         saveUninitialized: true
     }))
+
+    app.use(passport.initialize())
+    app.use(passport.session());
+
     app.use(flash())
 
     // Middleware (Criando variaveis globais momentaneas)
     app.use((req, res, next) => {
         res.locals.success_msg = req.flash("success_msg")
         res.locals.error_msg = req.flash("error_msg")
+        res.locals.error = req.flash("error")
         next()
     })
 
